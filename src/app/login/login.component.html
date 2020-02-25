@@ -1,0 +1,35 @@
+<div class="bg-img">
+	<div class="container-fluid mb-5">
+		<div class="login-box">
+			<!-- <img src="logo.jpg" class="avatar" /> -->
+			<h1>Login</h1>
+			<form #userForm="ngForm">
+				<!-- {{userForm.value|json}} -->
+				<!-- {{userModel|json}} -->
+				<div class="form-group">
+					<label>Name</label>
+					<input required #name="ngModel" [class.is-invalid]="name.touched && name.invalid" type="text"
+						name="User" class="form-control tp" placeholder="userId" [(ngModel)]="userModel.name" />
+					<small [class.d-none]="name.valid || name.untouched" class="text-danger">UserId is required</small>
+				</div>
+
+				<div class="form-group">
+					<label>Password</label>
+					<input required #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
+						type="password" name="password" class="form-control tp" placeholder="password"
+						[(ngModel)]="userModel.password" />
+					<small [class.d-none]="password.valid || password.untouched" class="text-danger">password
+						required</small>
+				</div>
+
+				<div>
+					<button [disabled]="!userForm.form.valid" class="btn btn-primary submitB" type="submit"
+						(click)="onSubmit()">
+						LOGIN
+					</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
