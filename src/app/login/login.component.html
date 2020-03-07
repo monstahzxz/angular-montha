@@ -9,7 +9,7 @@
 				<div class="form-group">
 					<label>Name</label>
 					<input required #name="ngModel" [class.is-invalid]="name.touched && name.invalid" type="text"
-						name="User" class="form-control tp" placeholder="userId" [(ngModel)]="userModel.name" />
+						name="username" class="form-control tp" placeholder="userId" [(ngModel)]="userModel.username" />
 					<small [class.d-none]="name.valid || name.untouched" class="text-danger">UserId is required</small>
 				</div>
 
