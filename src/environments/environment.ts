@@ -4,7 +4,7 @@
 
 export const environment = {
 	apiUrl: {
-		//base: 'http:localhost:4200/',
+		base: 'http://localhost:3000/',
 		login: 'mob/login'
 	},
 	production: false
