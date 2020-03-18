@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
 		dialogConfig.autoFocus = true;
 		// dialogConfig.position = { 'top': '10', 'right': '0' };
-		dialogConfig.height = '500px';
-		dialogConfig.width = '370px';
+		dialogConfig.height = '400px';
+		dialogConfig.width = '300px';
 
 
 		this.dialog.open(ProfileDialogComponent, dialogConfig);

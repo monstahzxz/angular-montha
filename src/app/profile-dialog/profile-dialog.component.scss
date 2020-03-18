@@ -1,7 +1,7 @@
 .avatar {
     vertical-align:middle;
-    width: 88px;
-    height: 88px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background-position: center;
   }
@@ -10,4 +10,16 @@
 }
 .titleSpan{
     font-size: x-small;
+}
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  }
+.btnWidth{
+    width:100%;
 }
