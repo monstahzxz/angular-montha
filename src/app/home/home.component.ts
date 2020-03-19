@@ -8,6 +8,12 @@ import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.compone
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+	public subjects = [
+		{ name: 'database management', url: '../../assets/image/dbms.jpg' },
+		{ name: 'computer network', url: '../../assets/image/cn.jpg' },
+		{ name: 'cryptography', url: '../../assets/image/crypt.jpg' },
+		{ name: 'machine learning', url: '../../assets/image/ml.jpg' }
+	];
 
 	constructor(private dialog: MatDialog) { }
 
@@ -15,6 +21,7 @@ export class HomeComponent implements OnInit {
 	}
 	accPop() {
 		console.log('Account PopUp');
+		// console.log('sada' + this.subject + 'sdf')
 		const dialogConfig = new MatDialogConfig();
 
 		dialogConfig.autoFocus = true;
