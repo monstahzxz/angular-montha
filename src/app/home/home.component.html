@@ -2,7 +2,7 @@
 <div>
     <mat-toolbar class="toolbar">
         <mat-toolbar-row>
-            <mat-icon class="camera_logo att">camera</mat-icon>
+            <mat-icon class="camera_logo">camera</mat-icon>
             <span class="att">AutoAttendance</span>
             <span class="spacer"></span>
             <button mat-mini-fab color='warn' class="butDis" disableRipple='true' (click)='accPop()'>
@@ -10,4 +10,43 @@
             </button>
         </mat-toolbar-row>
     </mat-toolbar>
+</div>
+<!-- Cards -->
+<!-- <div>
+    <mat-card class="example-card">
+        <div style="background-size: cover;">
+            <img mat-card-img src="../../assets/image/vim_avatar.jpg" alt='avatar' class="cardImg">
+        </div>
+
+        <mat-card-actions>
+            <button mat-button color='primary'>Atake</button>
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+
+<div class="container">
+    <mat-card class="example-card">
+        <img mat-card-image src="../../assets/image/dbms.jpg" alt="dbms" class="cardImg">
+        <mat-card-actions>
+            <div class="btn-group-vertical btnWidth">
+                <button type="button" class="btn font">DATABASE MANAGEMENT</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+        <img mat-card-image src="../../assets/image/ml.jpg" alt="machine learning" class="cardImg">
+        <mat-card-actions>
+            <div class="btn-group-vertical btnWidth">
+                <button type="button" class="btn font">MACHINE LEARNING</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+        <img mat-card-image src="../../assets/image/crypt.jpg" alt="cryptography" class="cardImg">
+        <mat-card-actions>
+            <div class="btn-group-vertical btnWidth">
+                <button type="button" class="btn font">CRYPTOGRAPHY</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
 </div>

@@ -7,7 +7,8 @@ export const environment = {
 		base: 'http://localhost:3000/',
 		login: 'mob/login'
 	},
-	production: false
+	production: false,
+
 };
 
 /*

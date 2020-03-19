@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
 		dialogConfig.height = '400px';
 		dialogConfig.width = '300px';
 
-
 		this.dialog.open(ProfileDialogComponent, dialogConfig);
 	}
 }
