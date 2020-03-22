@@ -1,0 +1,54 @@
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.butDis {
+    display: contents;
+}   
+
+.avatar {
+    vertical-align:middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+  }
+.camera_logo{
+    font-size: 40px;
+    display: table;
+    color: rgb(46, 41, 41);
+}
+.toolbar{
+    background:linear-gradient(104deg, rgba(162,196,213,1) 8%, rgba(0,35,161,1) 99%);
+}
+.att{
+    color:rgb(225, 225, 235);
+}
+.example-card {
+   max-width: 400px;
+   margin-top: 22px;
+   border-radius: 15px;
+   background: linear-gradient(104deg, rgba(162,196,213,1) 8%, rgba(0,35,161,1) 99%);
+   color:whitesmoke;
+//    height: 320px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+.cardImg{
+    height: 100px;
+}
+.btnWidth{
+    width:100%;
+    margin-top: -21px;
+    
+}
+.font{
+    font-size: 21px;
+    font-family: initial;
+    color: whitesmoke;
+    text-transform: uppercase;
+}

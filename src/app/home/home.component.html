@@ -1,0 +1,26 @@
+<!-- Toolbar with PopUp-->
+<div>
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <mat-icon class="camera_logo">camera</mat-icon>
+            <span class="att">AutoAttendance</span>
+            <span class="spacer"></span>
+            <button mat-mini-fab color='warn' class="butDis" disableRipple='true' (click)='accPop()'>
+                <img src="../../assets/image/vim_avatar.jpg" alt='avatar' class="avatar">
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
+
+<!-- Cards -->
+<div class="container">
+    <mat-card class="example-card" *ngFor='let subject of subjects'>
+        <img mat-card-image src={{subject.url}} alt="dbms" class="cardImg">
+        <mat-card-actions>
+            <div class="btn-group-vertical btnWidth">
+                <button type="button" class="btn font">{{subject.name}}</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
