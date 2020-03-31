@@ -19,7 +19,7 @@
         <img mat-card-image src={{subject.url}} alt="dbms" class="cardImg">
         <mat-card-actions>
             <div class="btn-group-vertical btnWidth">
-                <button type="button" class="btn font">{{subject.name}}</button>
+                <button type="button" class="btn font" [routerLink]="['subject']">{{subject.name}}</button>
             </div>
         </mat-card-actions>
     </mat-card>

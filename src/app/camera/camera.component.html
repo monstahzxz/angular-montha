@@ -1,0 +1,38 @@
+<div>
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <mat-icon class="camera_logo">camera</mat-icon>
+            <div class="att"><span>Subject</span></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
+<!-- camera -->
+
+<div class="container-fluid vh-100">
+    <div class="d-flex flex-column align-items-center">
+        <div class="p-1">
+            <video #video class='vidCam' autoplay></video>
+        </div>
+        <div class="pb-2">
+            <button mat-fab color='primary' (click)="capture()">
+                <mat-icon>camera_alt</mat-icon>
+            </button>
+        </div>
+        <div class="p-1">
+            <canvas #canvas class="vid"></canvas>
+        </div>
+        <div>
+            <ul>
+                <li *ngFor="let c of captures">
+                    <img src="{{ c }}" height="50" style="margin-bottom: 4%;" />
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="captures.length>=4">
+            <!-- <button mat-raised-button color='accent' (click)="retake()">Retake</button> -->
+            <button mat-raised-button color='primary'>Submit</button>
+
+        </div>
+    </div>
+</div>

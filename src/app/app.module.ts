@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material/material.module';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
+import { SubjectComponent } from './subject/subject.component';
+import { CameraComponent } from './camera/camera.component';
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { ProfileDialogComponent } from './profile-dialog/profile-dialog.componen
         AppComponent,
         LoginComponent,
         HomeComponent,
-        ProfileDialogComponent
+        ProfileDialogComponent,
+        SubjectComponent,
+        CameraComponent
     ],
     imports: [
         BrowserModule,
@@ -28,6 +33,24 @@ import { ProfileDialogComponent } from './profile-dialog/profile-dialog.componen
         HttpClientModule,
         BrowserAnimationsModule,
         MaterialModule,
+        RouterModule.forRoot([
+            {
+                path: '',
+                component: LoginComponent
+            },
+            {
+                path: 'home',
+                component: HomeComponent
+            },
+            {
+                path: 'home/subject',
+                component: SubjectComponent
+            },
+            {
+                path: 'home/subject/camera',
+                component: CameraComponent
+            }
+        ])
         // NgbModule
     ],
     entryComponents: [ProfileDialogComponent],

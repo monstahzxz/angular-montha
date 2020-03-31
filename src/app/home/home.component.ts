@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.component';
+import { SubjectService } from '../subject.service';
 
 @Component({
 	selector: 'app-home',
@@ -15,10 +16,13 @@ export class HomeComponent implements OnInit {
 		{ name: 'machine learning', url: '../../assets/image/ml.jpg' }
 	];
 
-	constructor(private dialog: MatDialog) { }
+	constructor(private dialog: MatDialog, private subService: SubjectService) { }
 
 	ngOnInit(): void {
+		this.getSub();
 	}
+
+
 	accPop() {
 		console.log('Account PopUp');
 		// console.log('sada' + this.subject + 'sdf')
@@ -30,5 +34,12 @@ export class HomeComponent implements OnInit {
 		dialogConfig.width = '300px';
 
 		this.dialog.open(ProfileDialogComponent, dialogConfig);
+	}
+
+
+	getSub() {
+		this.subService.getSubjects().subscribe((data) => {
+			console.log(data);
+		})
 	}
 }
