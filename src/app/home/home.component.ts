@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 	constructor(private dialog: MatDialog, private subService: SubjectService) { }
 
 	ngOnInit(): void {
-		this.getSub();
+		// this.getSub();
 	}
 
 
@@ -37,9 +37,9 @@ export class HomeComponent implements OnInit {
 	}
 
 
-	getSub() {
-		this.subService.getSubjects().subscribe((data) => {
-			console.log(data);
-		})
-	}
+	// getSub() {
+	// 	this.subService.getSubjects().subscribe((data) => {
+	// 		console.log(data);
+	// 	})
+	// }
 }

@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 				}
 				console.log(this.route)
 			});
+		// this.router.navigate(['home']);
 
 	}
 
