@@ -9,17 +9,20 @@ import { SubjectService } from '../subject.service';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	public subjects = [
-		{ name: 'database management', url: '../../assets/image/dbms.jpg' },
-		{ name: 'computer network', url: '../../assets/image/cn.jpg' },
-		{ name: 'cryptography', url: '../../assets/image/crypt.jpg' },
-		{ name: 'machine learning', url: '../../assets/image/ml.jpg' }
-	];
+	// public subjects = [
+	// 	{ name: 'database management', url: '../../assets/image/dbms.jpg' },
+	// 	{ name: 'computer network', url: '../../assets/image/cn.jpg' },
+	// 	{ name: 'cryptography', url: '../../assets/image/crypt.jpg' },
+	// 	{ name: 'machine learning', url: '../../assets/image/ml.jpg' }
+	// ];
+
+	public subjects: any;
+	// public url:string;
 
 	constructor(private dialog: MatDialog, private subService: SubjectService) { }
 
 	ngOnInit(): void {
-		// this.getSub();
+		this.getSub();
 	}
 
 
@@ -37,9 +40,18 @@ export class HomeComponent implements OnInit {
 	}
 
 
-	// getSub() {
-	// 	this.subService.getSubjects().subscribe((data) => {
-	// 		console.log(data);
-	// 	})
-	// }
+	getSub() {
+		this.subService.getSubjects().subscribe((data) => {
+			console.log(data);
+			this.subjects = data;
+		})
+	}
+
+	public imgsrc: any;
+
+	getSubImg(url) {
+		this.subService.getImg(url).subscribe((res: any) => {
+			return res;
+		});
+	}
 }
