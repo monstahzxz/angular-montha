@@ -16,14 +16,4 @@ export class SubjectService {
     return this.http.get('http://localhost:3000/mob/private/getSubjects', { withCredentials: true })
   }
 
-  getImg(url: string): any {
-    // console.log(url);
-    return this.http.get('http://localhost:3000' + url, { responseType: 'blob', withCredentials: true }).pipe(
-      map((res: any) => {
-        const urlCreator = window.URL;
-        return this.sanitizer.bypassSecurityTrustUrl(urlCreator.createObjectURL(res));
-      })
-    );
-  }
-
 }

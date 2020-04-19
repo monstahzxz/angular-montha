@@ -46,12 +46,4 @@ export class HomeComponent implements OnInit {
 			this.subjects = data;
 		})
 	}
-
-	public imgsrc: any;
-
-	getSubImg(url) {
-		this.subService.getImg(url).subscribe((res: any) => {
-			return res;
-		});
-	}
 }
