@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Pic } from '../models/pic-post';
+import { PictureService } from '../services/picture.service';
 
 @Component({
 	selector: 'app-camera',
@@ -24,7 +26,7 @@ export class CameraComponent implements OnInit {
 	public captures: Array<any>;
 	public base: string;
 
-	constructor(private renderer: Renderer2) {
+	constructor(private renderer: Renderer2, private picService: PictureService) {
 		this.captures = [];
 	}
 
@@ -55,14 +57,15 @@ export class CameraComponent implements OnInit {
 		this.renderer.setProperty(this.canvas.nativeElement, 'height', this.videoHeight);
 		this.canvas.nativeElement.getContext('2d').drawImage(this.videoElement.nativeElement, 0, 0);
 		this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
-		// var i;
-		// if (this.captures.length > 2) {
-		// 	for (i = 0; i < this.captures.length; i++) {
-		// 		this.base = this.captures[i];
-		// 		this.base = this.base.slice(22);
-		// 		console.log(this.base);
-		// 	}
-		// }
+	}
+	public body = <Pic>{};
+	picSubmit() {
+		console.log("submitting snaps");
+		this.body.image = this.captures;
+		this.picService.picture(this.body).subscribe((res) => {
+			console.log(res);
+		});
+		console.log(this.body);
 	}
 
 	retake() {
