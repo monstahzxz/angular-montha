@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.component';
 import { SubjectService } from '../services/subject.service';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
 
 	public subjects: any;
 
-	constructor(private dialog: MatDialog, private subService: SubjectService) { }
+	constructor(private dialog: MatDialog, private subService: SubjectService, private router: Router) { }
 
 	ngOnInit(): void {
 		this.getSub();
@@ -37,5 +39,10 @@ export class HomeComponent implements OnInit {
 			console.log(data);
 			this.subjects = data;
 		})
+	}
+	public sub;
+	navi(sub) {
+		console.log(sub);
+		this.router.navigate(['home/subject'], { state: { subject: sub } });
 	}
 }
