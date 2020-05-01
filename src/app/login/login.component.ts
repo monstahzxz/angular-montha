@@ -12,21 +12,15 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class LoginComponent implements OnInit {
 	userModel = new User("", "");
-	obData = {};
-	public route: string = "/login";
-	public loginC = false;
+	public ob: any;
+	public wrongEntry: boolean = false;
+
 	constructor(private _loginService: AuthService,
 		private router: Router,
 		private spinner: NgxSpinnerService) { }
 
 	ngOnInit(): void {
-		// this.sessionVerify();
-		// this.spinner.show();
-
-		// setTimeout(() => {
-		// 	/** spinner ends after 5 seconds */
-		// 	this.spinner.hide();
-		// }, 5000);
+		this.sessionVerify();
 	}
 
 	sessionVerify() {
@@ -38,19 +32,21 @@ export class LoginComponent implements OnInit {
 		})
 	}
 
-	public ob: any;
-
 	onSubmit() {
 		console.log(this.userModel);
 		this.spinner.show();
 		this._loginService.userVerify(this.userModel)
-			.subscribe(data => {
+			.subscribe((data) => {
 				console.log(data);
 				this.spinner.hide();
 				this.ob = <Login_response>data;
 				if (this.ob.statusCode == 200) {
 					this.router.navigate(['home']);
 				}
+			}, (error) => {
+				this.spinner.hide();
+				console.log(error["status"]);
+				this.wrongEntry = true;
 			});
 	}
 

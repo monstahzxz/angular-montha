@@ -2,8 +2,8 @@
 	<div class="container-fluid mb-5">
 
 		<!-- Spinner -->
-		<ngx-spinner bdColor="rgba(39,41,42,0.8)" size="medium" color="rgba(250,247,247,0.96)" type="square-loader"
-			[fullScreen]="true">
+		<ngx-spinner bdColor="rgba(39,41,42,0.8)" size="medium" color="rgba(250,247,247,0.96)"
+			type="line-spin-clockwise-fade-rotating" [fullScreen]="true">
 		</ngx-spinner>
 
 		<!-- Login Box -->
@@ -34,7 +34,9 @@
 						(click)="onSubmit()">
 						LOGIN
 					</button>
-
+					<div>
+						<small [class.d-none]="!wrongEntry" class="text-danger">Incorrect Entry</small>
+					</div>
 				</div>
 			</form>
 		</div>
