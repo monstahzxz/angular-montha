@@ -13,7 +13,7 @@ export class AuthService {
     constructor(private http: HttpClient) { }
 
     userCheck() {
-        return this.http.get("http://localhost:3000/mob/verify", { withCredentials: true, responseType: 'text' });
+        return this.http.get("http://localhost:3000/mob/verify", { withCredentials: true });
     }
 
     userVerify(body) {

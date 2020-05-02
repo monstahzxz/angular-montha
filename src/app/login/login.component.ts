@@ -29,9 +29,7 @@ export class LoginComponent implements OnInit {
 
 	sessionVerify() {
 		this._loginService.userCheck().subscribe((res: any) => {
-			// console.log(res.isVerified);
 			this.verOb = <Verify>res;
-			console.log(this.verOb['isVerified']);
 			if (this.verOb.isVerified) {
 				this.router.navigate(['home']);
 			}
