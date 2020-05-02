@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from "../models/user";
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Login_response } from '../models/login_res'
+import { Login_response } from '../models/login_res';
+import { Verify } from "../models/user";
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -13,6 +14,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class LoginComponent implements OnInit {
 	userModel = new User("", "");
 	public ob: any;
+	public verOb: any;
 	public wrongEntry: boolean = false;
 
 	constructor(private _loginService: AuthService,
@@ -23,10 +25,14 @@ export class LoginComponent implements OnInit {
 		this.sessionVerify();
 	}
 
+
+
 	sessionVerify() {
 		this._loginService.userCheck().subscribe((res: any) => {
-			console.log(res);
-			if (res == 'verify success') {
+			// console.log(res.isVerified);
+			this.verOb = <Verify>res;
+			console.log(this.verOb['isVerified']);
+			if (this.verOb.isVerified) {
 				this.router.navigate(['home']);
 			}
 		})

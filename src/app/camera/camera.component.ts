@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { Pic } from '../models/pic-post';
 import { PictureService } from '../services/picture.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
 	selector: 'app-camera',
@@ -26,7 +27,7 @@ export class CameraComponent implements OnInit {
 	public captures: Array<any>;
 	public base: string;
 
-	constructor(private renderer: Renderer2, private picService: PictureService) {
+	constructor(private renderer: Renderer2, private picService: PictureService, private spinner: NgxSpinnerService) {
 		this.captures = [];
 	}
 
@@ -61,9 +62,11 @@ export class CameraComponent implements OnInit {
 	public body = <Pic>{};
 	picSubmit() {
 		console.log("submitting snaps");
+		this.spinner.show();
 		this.body.image = this.captures;
 		this.picService.picture(this.body).subscribe((res) => {
 			console.log(res);
+			this.spinner.hide();
 		});
 		console.log(this.body);
 	}
