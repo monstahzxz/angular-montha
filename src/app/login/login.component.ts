@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 	public ob: any;
 	public verOb: any;
 	public wrongEntry: boolean = false;
+	public showLogin: boolean = false;
 
 	constructor(private _loginService: AuthService,
 		private router: Router,
@@ -32,6 +33,9 @@ export class LoginComponent implements OnInit {
 			this.verOb = <Verify>res;
 			if (this.verOb.isVerified) {
 				this.router.navigate(['home']);
+			}
+			else {
+				this.showLogin = true;
 			}
 		})
 	}

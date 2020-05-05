@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Chart } from 'chart.js';
 
 @Component({
     selector: 'app-subject',
@@ -17,15 +18,35 @@ export class SubjectComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        // this.chartFun();
     }
 
-    // public subjects = [
-    //     { name: 'database management', url: '/mob/private/getSubImg/dbms' },
-    //     { name: 'computer network', url: '/mob/private/getSubImg/cn' },
-    //     { name: 'cryptography', url: '/mob/private/getSubImg/crypt' },
-    //     { name: 'machine learning', url: '/mob/private/getSubImg/ml' }
-    // ];
+    public subjects = [
+        { name: 'database management', url: '/mob/private/getSubImg/dbms' },
+        { name: 'computer network', url: '/mob/private/getSubImg/cn' },
+        { name: 'cryptography', url: '/mob/private/getSubImg/crypt' },
+        { name: 'machine learning', url: '/mob/private/getSubImg/ml' }
+    ];
+
     demo() {
         console.log("camera evde?")
     }
+
+    // public myPie;
+    // chartFun() {
+    //     this.myPie = new Chart('canvas', {
+    //         type: 'pie',
+    //         data: {
+    //             datasets: [{
+    //                 data: [10, 20, 30]
+    //             }],
+    //             labels: [
+    //                 'Red',
+    //                 'Yellow',
+    //                 'Blue'
+    //             ]
+    //         }
+    //     });
+    // }
+
 }
