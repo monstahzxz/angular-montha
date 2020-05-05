@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Login_response } from '../models/login_res';
 import { Verify } from "../models/user";
 import { NgxSpinnerService } from 'ngx-spinner';
+import { error } from 'protractor';
 
 @Component({
 	selector: 'app-login',
@@ -34,9 +35,8 @@ export class LoginComponent implements OnInit {
 			if (this.verOb.isVerified) {
 				this.router.navigate(['home']);
 			}
-			else {
-				this.showLogin = true;
-			}
+		}, (error) => {
+			this.showLogin = true;
 		})
 	}
 
