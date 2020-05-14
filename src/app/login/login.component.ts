@@ -6,6 +6,7 @@ import { Login_response } from '../models/login_res';
 import { Verify } from "../models/user";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { error } from 'protractor';
+import { NgForm } from '@angular/forms';
 
 @Component({
 	selector: 'app-login',
@@ -40,21 +41,32 @@ export class LoginComponent implements OnInit {
 		})
 	}
 
-	onSubmit() {
+	public loading: boolean = false;
+	save(form: NgForm): void {
+		this.loading = true;
+		form.reset();
+		// alert("incorrect password");
+	}
+
+	onSubmit(form: NgForm) {
 		console.log(this.userModel);
-		this.spinner.show();
+		// this.spinner.show();
+		this.loading = true;
 		this._loginService.userVerify(this.userModel)
 			.subscribe((data) => {
 				console.log(data);
-				this.spinner.hide();
+				// this.spinner.hide();
+				this.loading = false;
 				this.ob = <Login_response>data;
 				if (this.ob.statusCode == 200) {
 					this.router.navigate(['home']);
 				}
 			}, (error) => {
-				this.spinner.hide();
+				// this.spinner.hide();
+				this.loading = false;
 				console.log(error["status"]);
 				this.wrongEntry = true;
+				form.reset();
 			});
 	}
 

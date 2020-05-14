@@ -37,3 +37,65 @@ li {
     text-align: center;
     color:rgb(225, 225, 235);
 }
+
+// Images
+
+.box-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.single-box{
+    position: relative;
+    display: flex;
+    // flex-direction: column;
+    align-self: center; 
+    justify-content: center;
+}
+.mat-fab{
+    outline: none;
+}
+.upload{
+    color: whitesmoke;
+    background-color: rgb(50, 99, 205);
+}
+.retake{
+    color: whitesmoke;
+    background-color: maroon;
+}
+.mat-fab.upload:disabled{
+    background-color: darken($color: #e7dfdf, $amount: 10);
+}
+.mat-fab.retake:disabled{
+    background-color: darken($color: #e7dfdf, $amount: 10);
+}
+
+// .my-fab {
+//     width: 20px;
+//     height: 20px;
+//     line-height: 14px;
+//     font-size: 14px;
+
+//     &::ng-deep .mat-button-wrapper{
+//         line-height: 14px;
+//         padding: 0;
+
+//          .mat-icon {
+//              font-size: 14px;
+//              padding-right: 4px;
+//              padding-top: 4px;
+//          }
+//    }
+// }
+// img {
+//     // border: 1px solid #bd1616; /* Gray border */
+//     border-radius: 4px;  /* Rounded border */
+//     // padding: 5px; /* Some padding */
+//     // width: 150px; /* Set a small width */
+//   }
+  
+  /* Add a hover effect (blue shadow) */
+//   img:hover {
+//     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+//   }

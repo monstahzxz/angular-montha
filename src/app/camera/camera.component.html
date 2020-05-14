@@ -1,11 +1,11 @@
-<div>
+<!-- <div>
     <mat-toolbar class="toolbar">
         <mat-toolbar-row>
             <mat-icon class="camera_logo">camera</mat-icon>
             <div class="att"><span>Subject</span></div>
         </mat-toolbar-row>
     </mat-toolbar>
-</div>
+</div> -->
 
 <!-- Spinner -->
 <div>
@@ -21,7 +21,7 @@
         <div class="p-1">
             <video #video class='vidCam' autoplay></video>
         </div>
-        <div class="pb-2">
+        <div class="pb-2" *ngIf="vidBtn">
             <button mat-fab color='primary' (click)="capture()">
                 <mat-icon>camera_alt</mat-icon>
             </button>
@@ -29,17 +29,46 @@
         <div class="p-1">
             <canvas #canvas class="vid"></canvas>
         </div>
-        <div>
-            <ul>
-                <li *ngFor="let c of captures">
-                    <img src="{{ c }}" height="50" style="margin-bottom: 4%;" />
-                </li>
-            </ul>
+        <div class="container">
+            <div class="box-area">
+                <img *ngFor="let c of captures; index as i" [src]="c"
+                    style="height: 90px; width: 100px; padding-right: 10px;padding-bottom: 10px;" (click)="open(i)" />
+            </div>
         </div>
-        <div *ngIf="captures.length>=4">
-            <!-- <button mat-raised-button color='accent' (click)="retake()">Retake</button> -->
-            <button mat-raised-button color='primary' (click)='picSubmit()'>Submit</button>
+
+        <!-- <div class="box-area" *ngIf="captures.length>=3">
+            <button mat-raised-button color='accent' (click)="retake()">Retake</button>
+            <button mat-raised-button color='primary' (click)='picSubmit()'>Upload</button>
+
+        </div> -->
+
+        <div class="container box-area fixed-bottom" style="margin-bottom: 30px;">
+
+            <div class="single-box" style="padding: 15px;">
+                <button mat-fab aria-label="Manual Entry" isIconButton="true" isRoundButton="true" (click)='manual()'>
+                    <mat-icon>create</mat-icon>
+                </button>
+            </div>
+            <div class="single-box" style="padding: 15px;">
+                <button mat-fab class="upload " aria-label="Upload" isIconButton="true" isRoundButton="true"
+                    (click)='picSubmit()' disabled={{showBtn}}>
+                    <mat-icon>
+                        cloud_upload</mat-icon>
+                </button>
+            </div>
+            <!-- style="width: 87px;height: 86px;"
+            style="display:block;width: 64px;height: 128px;line-height:51px;font-size:55px" -->
+
+
+            <div class="single-box" style="padding: 15px;">
+                <button mat-fab class="retake" aria-label="Retake" isIconButton=" true" isRoundButton="true"
+                    (click)="retake()" disabled={{showRetake}}>
+                    <mat-icon>rotate_90_degrees_ccw</mat-icon>
+                </button>
+            </div>
+
 
         </div>
+
     </div>
 </div>

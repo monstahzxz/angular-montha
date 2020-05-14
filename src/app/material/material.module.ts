@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LightboxModule } from 'ngx-lightbox';
 
 const MateialComponents = [MatButtonModule,
   MatToolbarModule,
@@ -13,7 +14,8 @@ const MateialComponents = [MatButtonModule,
   MatCardModule,
   MatIconModule,
   MatProgressSpinnerModule,
-  NgxSpinnerModule
+  NgxSpinnerModule,
+  LightboxModule
 ];
 
 @NgModule({

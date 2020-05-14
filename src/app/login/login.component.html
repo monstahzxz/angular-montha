@@ -2,9 +2,9 @@
 	<div class="container-fluid mb-5">
 
 		<!-- Spinner -->
-		<ngx-spinner bdColor="rgba(39,41,42,0.8)" size="medium" color="rgba(250,247,247,0.96)"
+		<!-- <ngx-spinner bdColor="rgba(39,41,42,0.8)" size="medium" color="rgba(250,247,247,0.96)"
 			type="line-spin-clockwise-fade-rotating" [fullScreen]="true">
-		</ngx-spinner>
+		</ngx-spinner> -->
 
 		<!-- Login Box -->
 		<div class="login-box">
@@ -29,9 +29,13 @@
 						required</small>
 				</div>
 
-				<div>
-					<button [disabled]="!userForm.form.valid" class="btn btn-primary submitB" type="submit"
-						(click)="onSubmit()">
+				<div style="text-align: center; ">
+					<!-- <button [disabled]="!userForm.form.valid" class="btn btn-primary submitB" type="submit"
+						(click)="save()">
+						LOGIN
+					</button> -->
+					<button class="btn btn-primary submitB" type="submit" [class.spinner]="loading"
+						[disabled]="!userForm.form.valid" (click)="onSubmit(userForm)" style="margin-top: 20px;">
 						LOGIN
 					</button>
 					<div>
