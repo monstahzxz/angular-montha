@@ -52,6 +52,30 @@
     color: whitesmoke;
     text-transform: uppercase;
 }
+.box-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.single-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center; 
+    justify-content: center;
+    padding: 10px;
+    width:50%;
+}
+@media only screen and (max-width: 360px){
+ .single-box{
+     padding: 5px;
+     width: 100%;
+ }
+ .box-area{
+    text-align: center;
+ }
+}
 // .container {
 //     display: flex;
 //     justify-content: space-between;

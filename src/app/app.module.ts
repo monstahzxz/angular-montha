@@ -15,6 +15,10 @@ import { MaterialModule } from './material/material.module';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
 import { SubjectComponent } from './subject/subject.component';
 import { CameraComponent } from './camera/camera.component';
+import { AbsPopComponent } from './abs-pop/abs-pop.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -24,12 +28,14 @@ import { CameraComponent } from './camera/camera.component';
         HomeComponent,
         ProfileDialogComponent,
         SubjectComponent,
-        CameraComponent
+        CameraComponent,
+        AbsPopComponent,
+
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule,
+        FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule,
         HttpClientModule,
         BrowserAnimationsModule,
         MaterialModule,

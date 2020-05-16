@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LightboxModule } from 'ngx-lightbox';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 const MateialComponents = [MatButtonModule,
   MatToolbarModule,
@@ -15,7 +17,9 @@ const MateialComponents = [MatButtonModule,
   MatIconModule,
   MatProgressSpinnerModule,
   NgxSpinnerModule,
-  LightboxModule
+  LightboxModule,
+  MatSelectModule,
+  FormsModule
 ];
 
 @NgModule({

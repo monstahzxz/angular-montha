@@ -15,16 +15,19 @@
 
 
 <!-- Cards -->
-<div class="container">
+<div class="container ">
     <div *ngFor='let subject of subjects'>
         <mat-card class="example-card" (click)='navi(subject.name)'>
             <img mat-card-image crossorigin="use-credentials" src="http://localhost:3000{{subject.url}}"
                 alt={{subject.name}} class="cardImg">
-            <mat-card-actions>
+            <!-- <mat-card-actions>
                 <div class="btn-group-vertical btnWidth">
                     <button type="button" class="btn font">{{subject.name}}</button>
                 </div>
-            </mat-card-actions>
+            </mat-card-actions> -->
+            <mat-card-content style="text-align: center;">
+                <span class="font">{{subject.name}}</span>
+            </mat-card-content>
         </mat-card>
     </div>
     <!-- <div class="fixed-bottom" style="text-align: center; margin: 20px;">

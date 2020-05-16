@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Chart } from 'chart.js';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ProfileDialogComponent } from '../profile-dialog/profile-dialog.component';
+import { Attendance } from '../models/user';
+import { AbsPopComponent } from '../abs-pop/abs-pop.component';
 
 @Component({
     selector: 'app-subject',
@@ -9,16 +12,19 @@ import { Chart } from 'chart.js';
 })
 export class SubjectComponent implements OnInit {
 
-    public sub: string;
 
-    constructor(private router: Router) {
+
+    constructor(private router: Router, private dialog: MatDialog) {
         const navigation = this.router.getCurrentNavigation();
         const state = navigation.extras.state;
         this.sub = state.subject;
     }
-
+    public sub: string;
+    strength: number;
+    hours: number;
+    abs: Array<any>;
     ngOnInit(): void {
-        // this.chartFun();
+
     }
 
     public subjects = [
@@ -32,21 +38,27 @@ export class SubjectComponent implements OnInit {
         console.log("camera evde?")
     }
 
-    // public myPie;
-    // chartFun() {
-    //     this.myPie = new Chart('canvas', {
-    //         type: 'pie',
-    //         data: {
-    //             datasets: [{
-    //                 data: [10, 20, 30]
-    //             }],
-    //             labels: [
-    //                 'Red',
-    //                 'Yellow',
-    //                 'Blue'
-    //             ]
-    //         }
-    //     });
-    // }
+    Pop() {
+        console.log('Account PopUp');
+
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.autoFocus = true;
+        // dialogConfig.position = { 'top': '10', 'right': '0' };
+        dialogConfig.height = '400px';
+        dialogConfig.width = '350px';
+        dialogConfig.disableClose = true;
+        dialogConfig.data = {
+            hours: this.hours,
+            abs: this.abs
+        }
+
+        let dialogRef = this.dialog.open(AbsPopComponent, dialogConfig);
+        dialogRef.afterClosed().subscribe((data) => {
+            console.log(data);
+        })
+    }
+
+
+
 
 }

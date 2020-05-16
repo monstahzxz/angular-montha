@@ -1,0 +1,31 @@
+<!-- <form #manual="ngForm"> -->
+<div class="container" style="text-align: center;">
+    <h2 mat-dialog-title>Take Attendance</h2>
+    <div mat-dialog-content>
+        <!-- <mat-form #pop="ngModel"> -->
+        <mat-form-field>
+            <mat-label>Number Of Hours</mat-label>
+            <mat-select #hrs="ngModel" required [(ngModel)]="data.hours" name="hrs" mat-placeholder="Hours">
+                <mat-option value=1>1</mat-option>
+                <mat-option value=2>2</mat-option>
+                <mat-option value=3>3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Attendance</mat-label>
+            <mat-select #list="ngModel" required [(ngModel)]="data.abs" name="absentees" mat-placeholder="Students"
+                multiple>
+                <mat-option *ngFor="let student of students" [value]="student">{{student}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions style="text-align: center;">
+        {{hrs.dirty}}
+        <button mat-button style="outline: none;" (click)="onNoClick()">Cancel</button>
+        <button mat-button [disabled]="!(hrs.dirty && list.dirty)" [mat-dialog-close]="data" style="outline: none;"
+            cdkFocusInitial="!(hrs.dirty && list.dirty)">Confirm</button>
+    </div>
+</div>
+<!-- </form> -->

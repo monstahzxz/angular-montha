@@ -6,6 +6,9 @@ import { Lightbox } from 'ngx-lightbox';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { error } from 'protractor';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
 
 @Component({
 	selector: 'app-camera',
@@ -36,7 +39,7 @@ export class CameraComponent implements OnInit {
 		private picService: PictureService,
 		private spinner: NgxSpinnerService,
 		private lightbox: Lightbox, private matIconRegistry: MatIconRegistry,
-		private domSanitizer: DomSanitizer) {
+		private domSanitizer: DomSanitizer, private dialog: MatDialog, private router: Router) {
 		this.captures = [];
 		this.vidBtn = false;
 	}
@@ -110,10 +113,6 @@ export class CameraComponent implements OnInit {
 		console.log(this.captures.length);
 		this.showBtn = true;
 		this.showRetake = true;
-	}
-
-	manual() {
-		console.log("Manual Entry")
 	}
 
 	handleError(error) {
