@@ -1,0 +1,68 @@
+.toolbar{
+    background:linear-gradient(104deg, rgba(162,196,213,1) 8%, rgba(0,35,161,1) 99%);
+}
+.att{
+    text-align: center;
+    color:rgb(225, 225, 235);
+    font-size: 18px;
+    font-family: initial;
+    // color: whitesmoke;
+    text-transform: uppercase;
+}
+.avatar {
+    vertical-align:middle;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-position: center;
+  }
+.centerAlign{
+    text-align: center;
+}
+.titleSpan{
+    font-size: x-small;
+}
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  }
+.btnWidth{
+    width:100%;
+}
+.example-tab-icon {
+    margin-right: 8px;
+  }
+.mat-tab-label{
+    min-width: 50% !important;
+    font-weight: 700;
+}  
+.mat-form-field{
+    width:100%
+}
+// @media (max-width: 599px)
+// {
+// .mat-tab-label {
+//     min-width: 50%;
+// }
+// }
+// .mat-tab-label {
+//     min-width: 50% !important;
+//     padding: 5px;
+//     background-color: transparent;
+//     color: red;
+//     font-weight: 700;
+// }
+
+// /* Styles for the active tab label */
+// .mat-tab-label.mat-tab-label-active {
+//     min-width: 50% !important;
+//     padding: 5px;
+//     background-color: transparent;
+//     color: red;
+//     font-weight: 700;
+// }

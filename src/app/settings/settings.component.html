@@ -1,0 +1,88 @@
+<!-- <div>
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <mat-icon class="camera_logo">settings</mat-icon>
+            <div class="att"><span>Settings</span></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div> -->
+<div class="container">
+    <div class="centerAlign" style="margin-top: 10%;">
+        <img crossorigin="use-credentials" src="http://localhost:3000/mob/private/getDp" alt='avatar'
+            class="avatar"><br>
+        <span class="titleSpan">vimalsebastian4u@gmail.com</span>
+        <hr>
+    </div>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">settings</mat-icon>
+                Settings
+            </ng-template>
+
+            <div class="container" style="text-align: center; margin-top: 10%;">
+                <form #password="ngForm">
+                    <!-- {{passModel|json}} -->
+                    <!-- {{password.value.pass}} -->
+                    <h3 style="text-align: left;">Change Password</h3>
+                    <hr>
+                    <div class="form-group" [class.has-error]="pass.touched && pass.invalid">
+                        <mat-form-field appearance="fill">
+                            <mat-label>New password</mat-label>
+                            <input matInput required #pass="ngModel" name="pass" [type]="hide ? 'password' : 'text'"
+                                [(ngModel)]="passModel.pass">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <!-- <span *ngI ></span> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group" [class.has-error]="confirm.touched && confirm.invalid">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Confirm password</mat-label>
+                            <input matInput required #confirm="ngModel" name="confirm" [(ngModel)]="passModel.confirm"
+                                [type]="hide1 ? 'password' : 'text'" pattern="password.value.pass"
+                                ConfirmValidator="pass">
+                            <button mat-icon-button matSuffix (click)="hide1 = !hide1"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+
+                        </mat-form-field>
+                        <!-- {{confirm.errors?.notEqual}} -->
+                        <div>
+                            <small *ngIf="confirm.errors?.notEqual && confirm.touched && !confirm.errors?.required"
+                                class="text-danger">Incorrect Password</small>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button mat-raised-button type="submit" [disabled]="confirm.errors?.notEqual"
+                            (click)='changePass(passModel)'>UPDATE</button>
+                    </div>
+                </form>
+                <hr>
+
+            </div>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label style="min-width: 50%;">
+                <mat-icon class="example-tab-icon">help</mat-icon>
+                Help
+            </ng-template>
+            Content 2
+        </mat-tab>
+
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Third
+            </ng-template>
+
+            Content 3
+        </mat-tab> -->
+    </mat-tab-group>
+
+</div>

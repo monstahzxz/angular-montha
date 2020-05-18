@@ -11,3 +11,8 @@ export interface Attendance {
     hrs: number;
     abs: Array<any>
 }
+export class Password {
+    constructor(public pass: string, public confirm: string) {
+
+    }
+}

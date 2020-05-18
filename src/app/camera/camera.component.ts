@@ -8,6 +8,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { error } from 'protractor';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ResultComponent } from '../result/result.component';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -39,7 +41,7 @@ export class CameraComponent implements OnInit {
 		private picService: PictureService,
 		private spinner: NgxSpinnerService,
 		private lightbox: Lightbox, private matIconRegistry: MatIconRegistry,
-		private domSanitizer: DomSanitizer, private dialog: MatDialog, private router: Router) {
+		private domSanitizer: DomSanitizer, private dialog: MatDialog, private router: Router, private location: Location) {
 		this.captures = [];
 		this.vidBtn = false;
 	}
@@ -51,6 +53,10 @@ export class CameraComponent implements OnInit {
 	// pauseCamera(){
 	// 	this.vide.pause();
 	// }
+	backClicked() {
+		// this.location.back()
+		this.router.navigate(['home'])
+	}
 
 	startCamera() {
 		if (!!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
@@ -90,6 +96,7 @@ export class CameraComponent implements OnInit {
 
 	}
 	public body = <Pic>{};
+	public ob = {};
 	picSubmit() {
 		console.log("submitting snaps");
 		this.spinner.show();
@@ -102,17 +109,36 @@ export class CameraComponent implements OnInit {
 		this.picService.picture(this.body).subscribe((res) => {
 			console.log(res);
 			this.spinner.hide();
+			this.ob = res;
+			this.resPop(this.ob)
 		}, (error) => {
 			this.spinner.hide();
 		});
 		console.log(this.body);
 	}
+	object = {};
+	resPop(object) {
+		console.log('result PopUp');
+
+		const dialogConfig = new MatDialogConfig();
+		dialogConfig.autoFocus = true;
+		// dialogConfig.position = { 'top': '10', 'right': '0' };
+		dialogConfig.height = '400px';
+		dialogConfig.width = '400px';
+		dialogConfig.data = object;
+
+		this.dialog.open(ResultComponent, dialogConfig);
+	}
+
 
 	retake() {
 		this.captures = [];
 		console.log(this.captures.length);
 		this.showBtn = true;
 		this.showRetake = true;
+		// this.resPop()
+		// this.backClicked()
+
 	}
 
 	handleError(error) {

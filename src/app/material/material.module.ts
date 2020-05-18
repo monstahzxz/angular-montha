@@ -9,6 +9,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LightboxModule } from 'ngx-lightbox';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const MateialComponents = [MatButtonModule,
   MatToolbarModule,
@@ -19,7 +22,7 @@ const MateialComponents = [MatButtonModule,
   NgxSpinnerModule,
   LightboxModule,
   MatSelectModule,
-  FormsModule
+  FormsModule, MatTabsModule, MatInputModule, MatFormFieldModule
 ];
 
 @NgModule({

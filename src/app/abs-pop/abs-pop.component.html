@@ -22,7 +22,6 @@
     </div>
 
     <div mat-dialog-actions style="text-align: center;">
-        {{hrs.dirty}}
         <button mat-button style="outline: none;" (click)="onNoClick()">Cancel</button>
         <button mat-button [disabled]="!(hrs.dirty && list.dirty)" [mat-dialog-close]="data" style="outline: none;"
             cdkFocusInitial="!(hrs.dirty && list.dirty)">Confirm</button>

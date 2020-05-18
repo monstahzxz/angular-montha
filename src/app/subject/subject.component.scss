@@ -44,3 +44,30 @@
     color: whitesmoke;
     text-transform: uppercase;
 }
+.entryBtn {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    // transition: all 0.4s ease 0s;
+    outline: none;
+    text-align: center;
+    margin-bottom: 20%;
+}
+.box-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.single-box{
+    position: relative;
+    display: flex;
+    // flex-direction: column;
+    align-self: center; 
+    justify-content: center;
+}

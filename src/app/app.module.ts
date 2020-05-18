@@ -19,6 +19,9 @@ import { AbsPopComponent } from './abs-pop/abs-pop.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { SettingsComponent } from './settings/settings.component';
+import { PasswordValidatorDirective } from './directive/password-validator.directive';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { MatSelectModule } from '@angular/material/select';
         SubjectComponent,
         CameraComponent,
         AbsPopComponent,
-
+        SettingsComponent,
+        PasswordValidatorDirective,
+        ResultComponent
     ],
     imports: [
         BrowserModule,
@@ -55,6 +60,10 @@ import { MatSelectModule } from '@angular/material/select';
             {
                 path: 'home/subject/camera',
                 component: CameraComponent
+            },
+            {
+                path: 'home/account',
+                component: SettingsComponent
             }
         ])
         // NgbModule

@@ -44,7 +44,7 @@ export class SubjectComponent implements OnInit {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = true;
         // dialogConfig.position = { 'top': '10', 'right': '0' };
-        dialogConfig.height = '400px';
+        dialogConfig.height = '300px';
         dialogConfig.width = '350px';
         dialogConfig.disableClose = true;
         dialogConfig.data = {

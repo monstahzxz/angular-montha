@@ -1,0 +1,27 @@
+<!-- <div class="container" style="padding-top: 5%;"> -->
+<div style="text-align: center;">
+    <h2 mat-dialog-title>ATTENDANCE</h2>
+</div>
+<!-- </div> -->
+<div mat-dialog-content class="container" style="text-align: center;">
+    <div class="w3-row">
+        <h3 style="text-align: center; padding-right: 9%;">Present : <span
+                style="color: green;text-align: center;">{{data.present}}</span> </h3>
+
+    </div>
+    <div class="w3-row">
+        <h3 style="text-align: center; padding-right: 9%;">Absent : <span
+                style="color: red;text-align: center;">{{data.absent}}</span></h3>
+
+    </div>
+    <div>
+        <h3>Absent Students</h3>
+        <ul id="menu">
+            <li *ngFor="let student of data.absentRNos">{{student}}, </li>
+
+        </ul>
+    </div>
+</div>
+<div mat-dialog-actions style="text-align: center;">
+    <button mat-button style="outline: none;" (click)="onNoClick()" cdkFocusInitial>Close</button>
+</div>

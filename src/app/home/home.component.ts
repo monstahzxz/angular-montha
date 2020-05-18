@@ -45,4 +45,8 @@ export class HomeComponent implements OnInit {
 		console.log(sub);
 		this.router.navigate(['home/subject'], { state: { subject: sub } });
 	}
+
+	acc() {
+		this.router.navigate(['home/account']);
+	}
 }
