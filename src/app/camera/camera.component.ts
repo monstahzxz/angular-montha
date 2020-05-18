@@ -41,10 +41,15 @@ export class CameraComponent implements OnInit {
 		private picService: PictureService,
 		private spinner: NgxSpinnerService,
 		private lightbox: Lightbox, private matIconRegistry: MatIconRegistry,
-		private domSanitizer: DomSanitizer, private dialog: MatDialog, private router: Router, private location: Location) {
+		private domSanitizer: DomSanitizer, private dialog: MatDialog, private router: Router,
+		private location: Location) {
 		this.captures = [];
 		this.vidBtn = false;
+		const navigation = this.router.getCurrentNavigation();
+		const state = navigation.extras.state;
+		this.sub = state.subject;
 	}
+	public sub: string;
 
 	ngOnInit(): void {
 		this.startCamera();
@@ -106,6 +111,8 @@ export class CameraComponent implements OnInit {
 		// 	this.retake();
 		// }, 20000)
 		this.body.image = this.captures;
+		this.body.subject = this.sub;
+		this.body.hours = 1;
 		this.picService.picture(this.body).subscribe((res) => {
 			console.log(res);
 			this.spinner.hide();

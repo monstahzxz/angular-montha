@@ -58,6 +58,10 @@ export class SubjectComponent implements OnInit {
         })
     }
 
+    navi() {
+        this.router.navigate(['home/subject/camera'], { state: { subject: this.sub } })
+    }
+
 
 
 

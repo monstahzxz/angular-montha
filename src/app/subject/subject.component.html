@@ -9,7 +9,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 20%;">
+        <!-- <a href="https://www.tutorialspoint.com/How-to-use-an-image-as-a-link-in-HTML"> -->
         <img src="../../assets/image/google-sheets-logo (1).png" alt="sheets" style="width: 190px;height: 120px;">
+        <!-- </a> -->
     </div>
 
     <div class="container box-area fixed-bottom" style="margin-bottom: 17%;">
@@ -20,7 +22,7 @@
             </button>
         </div>
         <div class="single-box" style="padding: 15px;">
-            <button mat-fab color='primary' (click)="demo()" [routerLink]="['camera']" style="outline: none;">
+            <button mat-fab color='primary' (click)="demo()" (click)='navi()' style="outline: none;">
                 <mat-icon>camera_alt</mat-icon>
             </button>
         </div>
